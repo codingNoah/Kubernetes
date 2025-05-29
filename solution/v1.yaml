@@ -1,10 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydeployment
+  name: yenohtessema
   labels:
     app: mywebapp
     tier: frontend
+  annotations:
+    submitted-by: yenoh-tessema-ugr5405
+
 spec:
   replicas: 1
   selector:
@@ -16,9 +19,9 @@ spec:
       labels:
         app: mywebapp
         tier: frontend
-    spec: # Pod spec
+    spec:
       containers:
-      - name: mycontainer
-        image: devopsjourney1/mywebapp
-        ports:
-        - containerPort: 80
+        - name: mycontainer
+          image: devopsjourney1/mywebapp
+          ports:
+            - containerPort: 80

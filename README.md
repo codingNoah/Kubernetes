@@ -1,6 +1,7 @@
-
 # Minikube commands
+
 Installation: https://minikube.sigs.k8s.io/docs/start/
+
 ```
 minikube config set driver docker
 minikube start // stop
@@ -10,6 +11,7 @@ minikube service <applicaiton-service-name>
 ```
 
 # Kubectl Insallation/Configuration
+
 Installation: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 ```
@@ -22,6 +24,7 @@ alias k='kubectl'
 ```
 
 # Kubectl commands
+
 ```
 kubectl get namespace
 kubectl get deployment
@@ -34,6 +37,7 @@ minikube service mywebapp
 ```
 
 # Cluster Management
+
 ```
 kubectl cluster-info
 kubectl get nodes
@@ -44,6 +48,7 @@ kubectl uncordon minikube
 ```
 
 # Namespaces
+
 ```
 kubectl get namespace
 kubectl create namespace dev
@@ -57,9 +62,10 @@ kubectl config set-context --current --namespace=<NAMESPACE NAME>
 ```
 
 # Your Hello World Kubernetes Project
+
 ```
 kubectl get get pods
-kubectl get pods -n dev 
+kubectl get pods -n dev
 
 kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
 kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4 -n dev
@@ -71,33 +77,40 @@ minikube service hello-node
 //On cloud providers that support load balancers, an external IP address would be provisioned to access the Service. On minikube, the LoadBalancer type makes the Service accessible through the minikube service command.
 ```
 
-# Deployments 
+# Deployments
+
 ```
 kubectl apply -f solution/v1.yaml
 ```
 
-# Service LoadBalancers 
+# Service LoadBalancers
+
 ```
 kubectl apply -f solution/v2.yaml
 ```
 
-# Config Maps and Scaling 
+# Config Maps and Scaling
+
 ```
 kubectl apply -f solution/v3.yaml
 ```
 
 # Resource Limits
+
 ```
 kubectl apply -f solution/v4.yaml
 ```
 
+# Troubleshooting, Logs, Rollouts, Draining Nodes
 
+k describe deployment yenohtessema
 
-# Troubleshooting, Logs, Rollouts, Draining Nodes 
-k describe deployment mydeployment
 ### Logs
+
 k logs -f -l app=mywebapp
+
 ### Rollouts
-kubectl rollout 
-k rollout restart deployment mydeployment
+
+kubectl rollout
+k rollout restart deployment yenohtessema
 kubectl drain minikube --ignore-daemonsets=true --force
