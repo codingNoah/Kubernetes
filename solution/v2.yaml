@@ -4,6 +4,9 @@ metadata:
   name: mywebapp
   labels:
     app: mywebapp
+  annotations:
+    submitted-by: yenoh-tessema-ugr5405
+
 spec:
   ports:
     - port: 80
